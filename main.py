@@ -149,6 +149,7 @@ if st.session_state.get('faiss_index'):
                     else:
                         st.write(tutor_response)
                         st.session_state.tutor_response = tutor_response
+                        st.spinner("Creating audio...")
                         audio_path = generate_and_play_audio(tutor_response,voice='en-IN-NeerjaNeural')
                         if audio_path:
                             st.audio(audio_path, format='audio/mp3')
